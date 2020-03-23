@@ -32,9 +32,9 @@ AutomaticLogin = $USR
 [chooser]
 EOF
 
-cat > ~/startfirefox.sh <<EOF
-firefox & xdotool search --sync --onlyvisible --pid $! windowactivate key F11
-EOF
+#cat > ~/startfirefox.sh <<EOF
+#firefox & xdotool search --sync --onlyvisible --pid $! windowactivate key F11
+#EOF
 
 
 cat > /var/lib/AccountsService/users/$USR <<EOF
@@ -52,7 +52,7 @@ cat > /etc/xdg/openbox/menu.xml <<EOF
                 file:///usr/share/openbox/menu.xsd">
 <menu id="root-menu" label="Openbox 3">
   <item label="Open Firefox">
-  e <action name="Execute"><execute>sh ~/startfirefox.sh </execute></action>
+  e <action name="Execute"><execute>firefox https://www.google.com </execute></action>
   </item>
   <separator />
   <item label="Network Settings">
