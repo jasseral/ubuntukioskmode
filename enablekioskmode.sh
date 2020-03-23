@@ -32,6 +32,11 @@ AutomaticLogin = $USR
 [chooser]
 EOF
 
+cat > ~/startfirefox.sh <<EOF
+firefox & xdotool search --sync --onlyvisible --pid $! windowactivate key F11
+EOF
+
+
 cat > /var/lib/AccountsService/users/$USR <<EOF
 [InputSource0]
 xkb=es
@@ -47,13 +52,13 @@ cat > /etc/xdg/openbox/menu.xml <<EOF
                 file:///usr/share/openbox/menu.xsd">
 <menu id="root-menu" label="Openbox 3">
   <item label="Open Firefox">
-  e <action name="Execute"><execute>firefox & xdotool search --sync --onlyvisible --pid $! windowactivate key F11</execute></action>
+  e <action name="Execute"><execute>sh ~/startfirefox.sh </execute></action>
   </item>
   <separator />
-  <item label="Network">
+  <item label="Network Settings">
   e <action name="Execute"><execute>network-admin</execute></action>
   </item>
-  <item label="Network config">
+  <item label="Network Connections">
   e <action name="Execute"><execute>nm-connection-editor</execute></action>
   </item>
 </menu>
