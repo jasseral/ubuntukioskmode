@@ -8,10 +8,11 @@ Have Ubuntu desktop 18.04
 # How to install
 
 - clone the respository and run run the script `sudo sh enablekioskmode.sh` (as root)
-- sudo reboot
 
 # Important notes
 If you are testing please perform this operations using a VM 
 
-# Future improvements
-start firefox in full screen
+# What is new
+1) I disabled auto run firefox on start 
+2) now on right click is avaliable the options (navigator , network settings , network connections )
+3) removed buttons on firefox 
