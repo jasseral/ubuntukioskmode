@@ -4,6 +4,8 @@ USR=$SUDO_USER
 
 apt-get update -y
 apt-get install -y --no-install-recommends openbox pulseaudio freerdp2-x11 gdm3
+sudo apt install gnome-system-tools
+
 usermod -a -G audio $USR
 mv /etc/xdg/openbox/autostart /etc/xdg/openbox/autostart.old
 #here config apps for autostart
@@ -32,7 +34,7 @@ cat > /var/lib/AccountsService/users/$USR <<EOF
 xkb=es
 [User]
 XSession=openbox
-SystemAccount=false
+SystemAccount=true
 EOF
 cat > /etc/xdg/openbox/menu.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
@@ -41,12 +43,12 @@ cat > /etc/xdg/openbox/menu.xml <<EOF
         xsi:schemaLocation="http://openbox.org/
                 file:///usr/share/openbox/menu.xsd">
 <menu id="root-menu" label="Openbox 3">
-  <item label="Web browser">
-  e <action name="Execute"><execute>x-www-browser</execute></action>
+  <item label="Open Firefox">
+  e <action name="Execute"><execute>firefox https://www.google.com</execute></action>
   </item>
   <separator />
-  <item label="Exit">
-    <action name="Exit" />
+  <item label="Network">
+  e <action name="Execute"><execute>network-admin</execute></action>
   </item>
 </menu>
 </openbox_menu>
