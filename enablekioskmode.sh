@@ -32,9 +32,9 @@ AutomaticLogin = $USR
 [chooser]
 EOF
 
-#cat > ~/startfirefox.sh <<EOF
-#firefox & xdotool search --sync --onlyvisible --pid $! windowactivate key F11
-#EOF
+cat > ~/startfirefox.sh <<EOF
+firefox & xdotool search --sync --onlyvisible --pid $! windowactivate key F11
+EOF
 
 
 cat > /var/lib/AccountsService/users/$USR <<EOF
