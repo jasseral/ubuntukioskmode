@@ -64,3 +64,4 @@ cat > /etc/xdg/openbox/menu.xml <<EOF
 </menu>
 </openbox_menu>
 EOF
+reboot
