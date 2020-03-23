@@ -5,7 +5,7 @@ USR=$SUDO_USER
 apt-get update -y
 apt-get install -y --no-install-recommends openbox pulseaudio freerdp2-x11 gdm3
 apt-get install gnome-system-tools
-sudo apt install xdotool
+apt-get install xdotool
 apt -y -f install
 
 usermod -a -G audio $USR
@@ -47,7 +47,7 @@ cat > /etc/xdg/openbox/menu.xml <<EOF
                 file:///usr/share/openbox/menu.xsd">
 <menu id="root-menu" label="Openbox 3">
   <item label="Open Firefox">
-  e <action name="Execute"><execute>firefox https://www.google.com</execute></action>
+  e <action name="Execute"><execute>firefox & xdotool search --sync --onlyvisible --pid $! windowactivate key F11</execute></action>
   </item>
   <separator />
   <item label="Network">
