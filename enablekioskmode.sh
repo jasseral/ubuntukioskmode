@@ -5,6 +5,7 @@ USR=$SUDO_USER
 apt-get update -y
 apt-get install -y --no-install-recommends openbox pulseaudio freerdp2-x11 gdm3
 apt-get install gnome-system-tools
+sudo apt install xdotool
 apt -y -f install
 
 usermod -a -G audio $USR
@@ -13,7 +14,7 @@ mv /etc/xdg/openbox/autostart /etc/xdg/openbox/autostart.old
 #here config apps for autostart
 cat > /etc/xdg/openbox/autostart <<EOF
 #xfce-mcs-manager &
-/usr/bin/firefox https://www.google.com &
+#/usr/bin/firefox https://www.google.com &
 EOF
 mv /etc/gdm3/custom.conf /etc/gdm3/custom-old.conf
 cat > /etc/gdm3/custom.conf <<EOF
@@ -51,6 +52,9 @@ cat > /etc/xdg/openbox/menu.xml <<EOF
   <separator />
   <item label="Network">
   e <action name="Execute"><execute>network-admin</execute></action>
+  </item>
+  <item label="Network config">
+  e <action name="Execute"><execute>nm-connection-editor</execute></action>
   </item>
 </menu>
 </openbox_menu>
