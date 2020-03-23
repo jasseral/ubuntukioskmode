@@ -4,10 +4,11 @@ USR=$SUDO_USER
 
 apt-get update -y
 apt-get install -y --no-install-recommends openbox pulseaudio freerdp2-x11 gdm3
-apt install gnome-system-tools
+apt-get install gnome-system-tools
 apt -y -f install
 
 usermod -a -G audio $USR
+
 mv /etc/xdg/openbox/autostart /etc/xdg/openbox/autostart.old
 #here config apps for autostart
 cat > /etc/xdg/openbox/autostart <<EOF
