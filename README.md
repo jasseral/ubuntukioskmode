@@ -13,8 +13,8 @@ Have Ubuntu desktop 18.04
 If you are testing please perform this operations using a VM 
 
 # What is new
--firefox now always stay visible as the main window in fullscreen mode
--disabled maximized minimized options
--disabled close firefox option 
--Enabled network-admin (<crt> + N) & connection-editor (<crt> + C) shortcuts
--Custom right click network menu is do not showed
+- firefox now always stay visible as the main window in fullscreen mode
+- disabled maximized minimized options
+- disabled close firefox option 
+- Enabled network-admin (<crt> + N) & connection-editor (<crt> + C) shortcuts
+- Custom right click network menu is do not showed
