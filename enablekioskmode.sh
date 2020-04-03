@@ -52,7 +52,7 @@ cat > /etc/xdg/openbox/menu.xml <<EOF
                 file:///usr/share/openbox/menu.xsd">
 <menu id="root-menu" label="Openbox 3">
   <separator />
-  <item label="Open navigator">
+  <item label="Open Browser">
   e <action name="Execute"><execute>firefox</execute></action>
 
 </menu>
@@ -181,11 +181,7 @@ cat > /etc/xdg/openbox/rc.xml <<EOF
   <chainQuitKey>C-g</chainQuitKey>
 
   <!-- Keybindings  -->
-   <keybind key="C-N">
-    <action name="Execute"><execute>network-admin</execute></action>
-  </keybind>
-  
-    <keybind key="C-M">
+   <keybind key="C-W">
     <action name="Execute"><execute>nm-connection-editor</execute></action>
   </keybind>
   
