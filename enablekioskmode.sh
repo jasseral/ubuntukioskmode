@@ -13,7 +13,7 @@ mv /etc/xdg/openbox/autostart /etc/xdg/openbox/autostart.old
 #here config apps for autostart
 cat > /etc/xdg/openbox/autostart <<EOF
 #xfce-mcs-manager &
-/usr/bin/firefox https://www.google.com &
+/usr/bin/firefox -private &
 EOF
 mv /etc/gdm3/custom.conf /etc/gdm3/custom-old.conf
 cat > /etc/gdm3/custom.conf <<EOF
