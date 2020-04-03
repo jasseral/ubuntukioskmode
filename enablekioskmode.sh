@@ -1,5 +1,4 @@
 #!/bin/bash
-read -p 'Enter the url site: ' url
 USR=$SUDO_USER
 
 apt-get update -y
@@ -14,7 +13,7 @@ mv /etc/xdg/openbox/autostart /etc/xdg/openbox/autostart.old
 #here config apps for autostart
 cat > /etc/xdg/openbox/autostart <<EOF
 #xfce-mcs-manager &
-/usr/bin/firefox $url -kiosk &
+/usr/bin/firefox https://www.google.com &
 EOF
 mv /etc/gdm3/custom.conf /etc/gdm3/custom-old.conf
 cat > /etc/gdm3/custom.conf <<EOF
