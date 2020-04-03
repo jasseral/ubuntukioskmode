@@ -52,12 +52,9 @@ cat > /etc/xdg/openbox/menu.xml <<EOF
                 file:///usr/share/openbox/menu.xsd">
 <menu id="root-menu" label="Openbox 3">
   <separator />
-  <item label="Network Settings">
-  e <action name="Execute"><execute>network-admin</execute></action>
-  </item>
-  <item label="Network Connections">
-  e <action name="Execute"><execute>nm-connection-editor</execute></action>
-  </item>
+  <item label="Open navigator">
+  e <action name="Execute"><execute>firefox</execute></action>
+
 </menu>
 </openbox_menu>
 EOF
