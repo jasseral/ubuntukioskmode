@@ -181,7 +181,11 @@ cat > /etc/xdg/openbox/rc.xml <<EOF
   <chainQuitKey>C-g</chainQuitKey>
 
   <!-- Keybindings  -->
-   <keybind key="C-W">
+  <keybind key="C-W">
+    <action name="Execute"><execute>nm-connection-editor</execute></action>
+  </keybind>
+
+  <keybind key="C-N">
     <action name="Execute"><execute>nm-connection-editor</execute></action>
   </keybind>
   
@@ -251,7 +255,7 @@ cat > /etc/xdg/openbox/rc.xml <<EOF
       <action name="Move"/>
     </mousebind>
     <mousebind button="Left" action="DoubleClick">
-      <action name="ToggleMaximize"/>
+      <action name="Execute"><execute>network-admin</execute></action>
     </mousebind>
 
     <mousebind button="Up" action="Click">
