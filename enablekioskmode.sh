@@ -20,7 +20,7 @@ cd ~/.mozilla/firefox/$PROFPATH
 # Creo el directorio chrome
 mkdir chrome
 # Creo el archivo userChrome.css
-cat > ~/.mozilla/firefox/$PROFPATH/userChrome.css <<EOF
+cat > ~/.mozilla/firefox/$PROFPATH/chrome/userChrome.css <<EOF
 #PanelUI-menu-button
 {
     display: none !important;
