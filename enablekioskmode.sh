@@ -1,6 +1,51 @@
 #!/bin/bash
 USR=$SUDO_USER
 
+
+#!/bin/bash
+# Me coloco en el folder de firefox
+cd ~/.mozilla/firefox/
+# Elimino todo el folder
+rm -Rf *
+# Creo el perfil sandbox
+firefox -CreateProfile sandbox
+
+# Obtengo el nombre de la carpeta del profile
+PROFPATH=$(ls | grep sandbox)
+# Creo el archivo  user.js
+cat > ~/.mozilla/firefox/$PROFPATH/user.js <<EOF
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets",true);
+EOF
+
+#Entro el directorio del perfil
+cd ~/.mozilla/firefox/$PROFPATH
+# Creo el directorio chrome
+mkdir chrome
+# Creo el archivo userChrome.css
+cat > ~/.mozilla/firefox/$PROFPATH/userChrome.css <<EOF
+#PanelUI-menu-button
+{
+    display: none !important;
+}
+
+#TabsToolbar { visibility: collapse !important; }
+
+#tabs-newtab-button {
+  display: none !important;
+}
+mkdir 
+/* Hide all  browser menus */
+#navigator-toolbox menu[label="File"],
+#navigator-toolbox menu[label="Edit"],
+#navigator-toolbox menu[label="View"],
+#navigator-toolbox menu[label="Go"],
+#navigator-toolbox menu[label="Bookmarks"],
+#navigator-toolbox menu[label="Tools"],
+#navigator-toolbox menu[label="Help"]
+{ display: none !important; }
+EOF
+
+
 apt-get update -y
 apt-get install -y --no-install-recommends openbox pulseaudio freerdp2-x11 gdm3
 apt-get install gnome-system-tools
@@ -13,7 +58,7 @@ mv /etc/xdg/openbox/autostart /etc/xdg/openbox/autostart.old
 #here config apps for autostart
 cat > /etc/xdg/openbox/autostart <<EOF
 #xfce-mcs-manager &
-/usr/bin/firefox -private -p sandbox -private -p sandbox &
+/usr/bin/firefox -p sandbox -private
 EOF
 mv /etc/gdm3/custom.conf /etc/gdm3/custom-old.conf
 cat > /etc/gdm3/custom.conf <<EOF
@@ -53,7 +98,7 @@ cat > /etc/xdg/openbox/menu.xml <<EOF
 <menu id="root-menu" label="Openbox 3">
   <separator />
   <item label="Open Browser">
-  e <action name="Execute"><execute>firefox -private -p sandbox</execute></action>
+  e <action name="Execute"><execute>firefox -p sandbox -private </execute></action>
 
 </menu>
 </openbox_menu>
@@ -506,49 +551,6 @@ cat > /etc/xdg/openbox/rc.xml <<EOF
 
 </openbox_config>
 
-EOF
-
-#!/bin/bash
-# Me coloco en el folder de firefox
-cd ~/.mozilla/firefox/
-# Elimino todo el folder
-rm -Rf *
-# Creo el perfil sandbox
-firefox -CreateProfile sandbox
-
-# Obtengo el nombre de la carpeta del profile
-PROFPATH=$(ls | grep sandbox)
-# Creo el archivo  user.js
-cat > ~/.mozilla/firefox/$PROFPATH/user.js <<EOF
-user_pref("toolkit.legacyUserProfileCustomizations.stylesheets",true);
-EOF
-
-#Entro el directorio del perfil
-cd ~/.mozilla/firefox/$PROFPATH
-# Creo el directorio chrome
-mkdir chrome
-# Creo el archivo userChrome.css
-cat > ~/.mozilla/firefox/$PROFPATH/userChrome.css <<EOF
-#PanelUI-menu-button
-{
-    display: none !important;
-}
-
-#TabsToolbar { visibility: collapse !important; }
-
-#tabs-newtab-button {
-  display: none !important;
-}
-mkdir 
-/* Hide all  browser menus */
-#navigator-toolbox menu[label="File"],
-#navigator-toolbox menu[label="Edit"],
-#navigator-toolbox menu[label="View"],
-#navigator-toolbox menu[label="Go"],
-#navigator-toolbox menu[label="Bookmarks"],
-#navigator-toolbox menu[label="Tools"],
-#navigator-toolbox menu[label="Help"]
-{ display: none !important; }
 EOF
 
 reboot
