@@ -21,3 +21,6 @@ If you are testing please perform this operations using a VM
 - disabled close firefox option 
 - Enabled network-admin (crt + Q) & connection-editor ( crt + W) shortcuts
 - Custom right click network menu only show open browser option
+
+# Demo
+![Image description](https://i.ibb.co/9yGRfLM/ubuntu.png)
