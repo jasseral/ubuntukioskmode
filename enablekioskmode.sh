@@ -1,14 +1,12 @@
 #!/bin/bash
 USR=$SUDO_USER
-
-
 #!/bin/bash
 # Me coloco en el folder de firefox
 cd ~/.mozilla/firefox/
 # Elimino todo el folder
 rm -Rf *
 # Creo el perfil sandbox
-firefox -CreateProfile sandbox
+sudo -u $1 firefox -CreateProfile sandbox
 
 # Obtengo el nombre de la carpeta del profile
 PROFPATH=$(ls | grep sandbox)
@@ -45,6 +43,7 @@ mkdir
 { display: none !important; }
 EOF
 
+exit
 
 apt-get update -y
 apt-get install -y --no-install-recommends openbox pulseaudio freerdp2-x11 gdm3
