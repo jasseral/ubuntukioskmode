@@ -7,14 +7,17 @@ Have Ubuntu desktop 18.04
 
 # How to install
 
-- clone the respository and run run the script `sudo sh enablekioskmode.sh` (as root)
+- clone the respository and run  the script `sudo sh enablekioskmode.sh $USER` (as root)
 
 # Important notes
 If you are testing please perform this operations using a VM 
 
 # What is new
-- firefox now always stay visible as the main window in fullscreen mode (this feauture is disbled for client requirement)
+- sandbox profile is created automatically
+- only one tab in firefox is now avaliable
+- disabled firefox menu 
+- firefox  always stay visible as the main window 
 - disabled maximized minimized options
-- disabled close firefox option (this only work with full screen mode but now is disabled for client requirement)
+- disabled close firefox option 
 - Enabled network-admin (crt + Q) & connection-editor ( crt + W) shortcuts
-- Custom right click network menu only show open navigator option
+- Custom right click network menu only show open browser option

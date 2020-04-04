@@ -43,7 +43,6 @@ mkdir
 { display: none !important; }
 EOF
 
-exit
 
 apt-get update -y
 apt-get install -y --no-install-recommends openbox pulseaudio freerdp2-x11 gdm3
