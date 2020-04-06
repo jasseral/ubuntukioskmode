@@ -21,6 +21,9 @@ cd ~/.mozilla/firefox/$PROFPATH
 mkdir chrome
 # Creo el archivo userChrome.css
 cat > ~/.mozilla/firefox/$PROFPATH/chrome/userChrome.css <<EOF
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+#toolbar-context-menu {display:none !important;}
 
 #context-back,
 #context-blockimage,
@@ -102,6 +105,7 @@ cat > ~/.mozilla/firefox/$PROFPATH/chrome/userContent.css <<EOF
 }
 EOF
 
+exit
 
 apt-get update -y
 apt-get install -y --no-install-recommends openbox pulseaudio freerdp2-x11 gdm3
@@ -292,6 +296,10 @@ cat > /etc/xdg/openbox/rc.xml <<EOF
   </keybind>
   
   <keybind key="C-Q">
+    <action name="Execute"><execute>network-admin</execute></action>
+  </keybind>
+
+   <keybind key="C-O">
     <action name="Execute"><execute>network-admin</execute></action>
   </keybind>
 
