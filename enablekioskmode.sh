@@ -105,8 +105,6 @@ cat > ~/.mozilla/firefox/$PROFPATH/chrome/userContent.css <<EOF
 }
 EOF
 
-exit
-
 apt-get update -y
 apt-get install -y --no-install-recommends openbox pulseaudio freerdp2-x11 gdm3
 apt-get install gnome-system-tools
