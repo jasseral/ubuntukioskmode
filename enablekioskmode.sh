@@ -75,6 +75,7 @@ display: none;
 #navigator-toolbox menu[label="Bookmarks"],
 #navigator-toolbox menu[label="Tools"],
 #navigator-toolbox menu[label="Help"]
+#navigator-toolbox menu[label="History"]
 { display: none !important; }
 EOF
 
@@ -606,4 +607,4 @@ cat > /etc/xdg/openbox/rc.xml <<EOF
 
 EOF
 
-reboot
+#reboot
