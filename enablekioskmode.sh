@@ -607,4 +607,4 @@ cat > /etc/xdg/openbox/rc.xml <<EOF
 
 EOF
 
-#reboot
+reboot
