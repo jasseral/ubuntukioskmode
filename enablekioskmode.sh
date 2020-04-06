@@ -77,6 +77,9 @@ display: none;
 #navigator-toolbox menu[label="Help"]
 #navigator-toolbox menu[label="History"]
 { display: none !important; }
+
+#navigator-toolbox menu{ display: none !important; }
+
 EOF
 
 
