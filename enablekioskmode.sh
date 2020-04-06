@@ -66,7 +66,7 @@ display: none;
 #tabs-newtab-button {
   display: none !important;
 }
-mkdir 
+
 /* Hide all  browser menus */
 #navigator-toolbox menu[label="File"],
 #navigator-toolbox menu[label="Edit"],
