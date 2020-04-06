@@ -25,6 +25,19 @@ cat > ~/.mozilla/firefox/$PROFPATH/chrome/userChrome.css <<EOF
 
 #toolbar-context-menu {display:none !important;}
 
+
+#autocomplete-history-dropmarker {
+display: none !important; }
+
+
+.urlbar-page-action {
+display: none !important;
+}
+.subviewbutton-nav{
+display: none !important;
+}
+
+
 #context-back,
 #context-blockimage,
 #context-bookmarklink,
