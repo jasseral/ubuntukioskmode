@@ -21,6 +21,41 @@ cd ~/.mozilla/firefox/$PROFPATH
 mkdir chrome
 # Creo el archivo userChrome.css
 cat > ~/.mozilla/firefox/$PROFPATH/chrome/userChrome.css <<EOF
+
+#context-back,
+#context-blockimage,
+#context-bookmarklink,
+#context-bookmarkpage,
+#context-copy,
+#context-copyemail,
+#context-copyimg,
+#context-copylink,
+#context-cut,
+#context-delete,
+#context-forward,
+#context-metadata,
+#context-openlink,
+#context-openlinkintab,
+#context-paste,
+#context-reload,
+#context-saveimage,
+#context-savelink,
+#context-savepage,
+#context-searchselect,
+#context-selectall,
+#context-stop,
+#context-setWallpaper,
+#context-undo,
+#context-viewbgimage,
+#context-viewimage,
+#context-viewinfo,
+#context-viewpartialsource-mathml,
+#context-viewpartialsource-selection,
+#context-viewsource,
+#context-takescreenshot{
+display: none;
+}
+
 #PanelUI-menu-button
 {
     display: none !important;
@@ -76,7 +111,7 @@ mv /etc/xdg/openbox/autostart /etc/xdg/openbox/autostart.old
 #here config apps for autostart
 cat > /etc/xdg/openbox/autostart <<EOF
 #xfce-mcs-manager &
-/usr/bin/firefox -p sandbox -private
+/usr/bin/firefox https://addons.mozilla.org/firefox/downloads/file/3459327/download_blocker-1.4-fx.xpi -private -p sandbox
 EOF
 mv /etc/gdm3/custom.conf /etc/gdm3/custom-old.conf
 cat > /etc/gdm3/custom.conf <<EOF
