@@ -44,6 +44,26 @@ mkdir
 EOF
 
 
+# Creo el archivo userContent.css
+cat > ~/.mozilla/firefox/$PROFPATH/chrome/userContent.css <<EOF
+@-moz-document url(about:blank),
+               url(about:preferences),
+               url(about:config),
+               url(about:newtab)
+{
+  #newtab-window,
+  html,
+  body, 
+  #newtab-customize-overlay 
+  {
+    color: #b2b2b2 !important;
+    display: none !important;
+
+  }
+}
+EOF
+
+
 apt-get update -y
 apt-get install -y --no-install-recommends openbox pulseaudio freerdp2-x11 gdm3
 apt-get install gnome-system-tools
