@@ -111,7 +111,7 @@ mv /etc/xdg/openbox/autostart /etc/xdg/openbox/autostart.old
 #here config apps for autostart
 cat > /etc/xdg/openbox/autostart <<EOF
 #xfce-mcs-manager &
-/usr/bin/firefox https://addons.mozilla.org/firefox/downloads/file/3459327/download_blocker-1.4-fx.xpi -private -p sandbox
+/usr/bin/firefox -private -p sandbox
 EOF
 mv /etc/gdm3/custom.conf /etc/gdm3/custom-old.conf
 cat > /etc/gdm3/custom.conf <<EOF
