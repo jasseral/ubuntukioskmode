@@ -1,5 +1,6 @@
 #!/bin/bash
 USR=$SUDO_USER
+export DISPLAY=:0
 #!/bin/bash
 # Me coloco en el folder de firefox
 cd ~/.mozilla/firefox/
